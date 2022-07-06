@@ -10,7 +10,7 @@
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
-    "test": "NODE_ENV=test jest --verbose"
+    "test": "NODE_ENV=test jest --verbose --runInBand --forceExit"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
   "devDependencies": {
     "eslint": "^8.18.0",
     "jest": "^28.1.2",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.4"
   },
   "jest": {
     "testEnvironment": "node"
